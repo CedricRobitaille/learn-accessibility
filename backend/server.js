@@ -18,8 +18,8 @@ const libraryCtrl = require("./controllers/api-library.js")
 app.get("/api/library", libraryCtrl.index);
 app.get("/api/library/:lessonId", libraryCtrl.show);
 app.post("/api/library", libraryCtrl.create);
-app.put("/api/library", libraryCtrl.update);
-app.delete("/api/library", libraryCtrl.del);
+app.put("/api/library/:lessonId", libraryCtrl.update);
+app.delete("/api/library/:lessonId", libraryCtrl.del);
 
 
 

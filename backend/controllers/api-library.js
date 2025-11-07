@@ -7,7 +7,7 @@ const index = async (req, res) => {
 }
 
 const show = async (req, res) => {
-  const lessonData = await Library.find(req.params.lessonId)
+  const lessonData = await Library.findById(req.params.lessonId)
   console.log("Lesson Data: ", lessonData)
   res.json(lessonData);
 }
@@ -19,7 +19,7 @@ const create = async (req, res) => {
 }
 
 const update = async (req, res) => {
-  const updatedLesson = await Library.findByIdAndUpdate(req.params.lessonId, req.body)
+  const updatedLesson = await Library.findByIdAndUpdate(req.params.lessonId, req.body, { new: true })
   console.log("Updated Lesson: ", updatedLesson)
   res.json(updatedLesson);
 }
