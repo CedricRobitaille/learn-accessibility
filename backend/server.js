@@ -4,6 +4,7 @@ dotenv.config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on("connected", () => {
@@ -11,6 +12,7 @@ mongoose.connection.on("connected", () => {
 });
 
 app.use(express.json())
+app.use(cors())
 
 const libraryCtrl = require("./controllers/api-library.js")
 

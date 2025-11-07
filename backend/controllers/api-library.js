@@ -31,10 +31,6 @@ const del = async (req, res) => {
 }
 
 
-
-
-
-
 module.exports = {
   index,
   show,
